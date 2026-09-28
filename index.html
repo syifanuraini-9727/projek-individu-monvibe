@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonVibe</title>
+    <title>MonVibe - Good Vibes, Safe Budget</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header class="header">
+        <nav class="nav-container">
+            <h2 class="logo">Mon<span>Vibe</span></h2>
+            <div class="badge-status">Status: <span id="status-text">Aman</span></div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="dashboard-overview">
+            <div class="card-total-saldo">
+                <p>Total Saldo Rekening</p>
+                <h2 id="txt-total-saldo">Rp 5.000.000</h2>
+            </div>
+            <div class="card-budget">
+                <p>Limit Anggaran Bulanan</p>
+                <h2 id="txt-budget">Rp 1.000.000</h2>
+            </div>
+            <div class="card-expense">
+                <p>Pengeluaran Bulan Ini</p>
+                <h2 id="txt-expense">Rp 0</h2>
+            </div>
+            <div class="card-balance">
+                <p>Sisa Limit Bulanan</p>
+                <h2 id="txt-limit-balance">Rp 1.000.000</h2>
+            </div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

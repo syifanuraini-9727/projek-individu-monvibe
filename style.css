@@ -163,3 +163,11 @@ body {
 }
 .item-info span:first-child { display: block; font-weight: 600; }
 .item-info span:last-child { font-size: 0.85rem; color: #e11d48; font-weight: 600; }
+
+.btn-delete {
+    background: #fee2e2; color: #dc2626; border: none; padding: 6px 12px;
+    border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+}
+.btn-delete:hover { background: #fecaca; }
+
+.footer { text-align: center; padding: 1.5rem; color: #94a3b8; font-size: 0.85rem; margin-top: auto; }

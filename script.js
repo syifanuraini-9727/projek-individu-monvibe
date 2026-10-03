@@ -68,3 +68,40 @@ function renderTransactions(dataArray) {
         list.appendChild(li);
     });
 }
+
+// update status
+function updateUI() {
+    let totalPengeluaran = 0;
+    transactions.forEach(function(item) {
+        totalPengeluaran += item.amount;
+    });
+
+    let sisaRekening = totalRekening - totalPengeluaran;
+    let sisaLimit = limitBulanan - totalPengeluaran;
+
+    txtTotalSaldo.textContent = formatRupiah(sisaRekening);
+    txtBudget.textContent = formatRupiah(limitBulanan);
+    txtExpense.textContent = formatRupiah(totalPengeluaran);
+    txtLimitBalance.textContent = formatRupiah(sisaLimit);
+    totalItem.textContent = transactions.length + ' item';
+
+    if (totalPengeluaran >= limitBulanan) {
+        statusText.textContent = 'Limit Habis';
+        statusText.style.color = '#9f1239'; 
+        budgetAlert.classList.remove('hidden');
+        budgetAlert.style.backgroundColor = '#ffe4e6';
+        budgetAlert.innerHTML = `<span>🚨 Peringatan Kritis! Anggaran bulanan Anda telah habis.</span>`;
+    } else if (totalPengeluaran >= (limitBulanan * 0.8)) {
+        statusText.textContent = 'Waspada';
+        statusText.style.color = '#e11d48'; 
+        budgetAlert.classList.remove('hidden');
+        budgetAlert.style.backgroundColor = '#fff1f2';
+        budgetAlert.innerHTML = `<span>⚠️ Perhatian! Pengeluaran Anda sudah melewati 80% dari batas limit.</span>`;
+    } else {
+        statusText.textContent = 'Aman';
+        statusText.style.color = '#16a34a'; 
+        budgetAlert.classList.add('hidden'); 
+    }
+
+    renderTransactions(transactions);
+}

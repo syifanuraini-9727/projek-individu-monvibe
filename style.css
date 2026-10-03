@@ -93,3 +93,24 @@ body {
 .card-budget h2 { color: #0284c7; }
 .card-expense h2 { color: #e11d48; }
 .card-balance h2 { color: #16a34a; }
+
+.alert-box {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #9f1239;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.hidden { display: none; }
+
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+}

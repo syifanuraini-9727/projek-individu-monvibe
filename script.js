@@ -150,3 +150,16 @@ form.addEventListener('submit', function(e) {
     updateUI();
     tampilkanNotifikasi('Transaksi baru berhasil ditambahkan!', 'sukses');
 });
+
+// live search
+searchInput.addEventListener('input', function(e) {
+    let keyword = e.target.value.toLowerCase();
+
+    let hasilPencarian = transactions.filter(function(item) {
+        return item.desc.toLowerCase().includes(keyword);
+    });
+
+    renderTransactions(hasilPencarian);
+});
+
+updateUI();

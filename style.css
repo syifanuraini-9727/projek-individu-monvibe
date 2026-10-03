@@ -114,3 +114,7 @@ body {
     grid-template-columns: 1fr 1.2fr;
     gap: 1.5rem;
 }
+
+@media (max-width: 768px) {
+    .grid-content { grid-template-columns: 1fr; }
+}

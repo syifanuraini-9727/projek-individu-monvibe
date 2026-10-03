@@ -105,3 +105,48 @@ function updateUI() {
 
     renderTransactions(transactions);
 }
+
+// menghapus data
+function hapusData(id) {
+    transactions = transactions.filter(function(item) {
+        return item.id !== id;
+    });
+    updateUI();
+    tampilkanNotifikasi('Transaksi berhasil dihapus!', 'sukses');
+}
+
+// menambah data
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    
+    let isiDesc = descInput.value.trim();
+    let isiAmount = Number(amountInput.value);
+
+    if (isiDesc === '' || isiAmount <= 0) {
+        tampilkanNotifikasi('Harap isi keterangan dan nominal dengan benar!', 'error');
+        return;
+    }
+
+    let pengeluaranSementara = 0;
+    transactions.forEach(function(item) {
+        pengeluaranSementara += item.amount;
+    });
+    let sisaUangSaatIni = totalRekening - pengeluaranSementara;
+
+    if (isiAmount > sisaUangSaatIni) {
+        tampilkanNotifikasi('Transaksi Gagal! Saldo rekening tidak cukup.', 'error');
+        return;
+    }
+
+    let dataBaru = {
+        id: Date.now(),
+        desc: isiDesc,
+        amount: isiAmount
+    };
+
+    transactions.push(dataBaru);
+    
+    form.reset();
+    updateUI();
+    tampilkanNotifikasi('Transaksi baru berhasil ditambahkan!', 'sukses');
+});

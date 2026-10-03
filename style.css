@@ -65,3 +65,31 @@ body {
     padding: 0 1.5rem;
     flex: 1;
 }
+
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-overview > div {
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+.dashboard-overview p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.dashboard-overview h2 { font-size: 1.5rem; font-weight: 700; }
+.card-total-saldo h2 { color: #4338ca; }
+.card-budget h2 { color: #0284c7; }
+.card-expense h2 { color: #e11d48; }
+.card-balance h2 { color: #16a34a; }
